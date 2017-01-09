@@ -16,6 +16,8 @@
         <module>KafkaTech</module>
         <module>HttpClient</module>
         <module>JVMPerformance</module>
+        <module>ShardingPlayGroud</module>
+        <module>NettyUsage</module>
     </modules>
 
     <dependencies>
