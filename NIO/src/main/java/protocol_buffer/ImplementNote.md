@@ -1,0 +1,1 @@
+protostuff 可以不用定义 .proto 文件直接使用 Java Pojo
