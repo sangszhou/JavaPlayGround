@@ -16,3 +16,7 @@ input of Transaction has a field called signature, this field is not come from a
 这个 index 是某个交易的 input index, 除此之外，他还会计算 all output 的 byte, 目前不知道它的目的是什么。
 getRawTx 的意义则是所有 input 和 output 的集合，用来计算此次 TX 的 id
 
+
+有几点需要注意:
+
+1. 

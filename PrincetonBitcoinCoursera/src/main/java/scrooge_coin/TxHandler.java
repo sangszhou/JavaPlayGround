@@ -1,6 +1,8 @@
 package scrooge_coin;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class TxHandler {
@@ -19,39 +21,16 @@ public class TxHandler {
 
     /**
      * @return true if:
-     * (1) all outputs claimed by {@code tx} are in the current UTXO pool,
-     *  tx 的 input 在 UTXO pool 才对啊？
-     *
-     * (2) the signatures on each input of {@code tx} are valid,
-     *  验证 input signature valid 的意义何在？
-     *
-     * (3) no UTXO is claimed multiple times by {@code tx},
-     *  应该指的是， UTXO 作为 input 只能出现一次
-     *
-     * (4) all of {@code tx}s output values are non-negative, and
-     *
-     * (5) the sum of {@code tx}s input values is greater than or equal to the sum of its output
-     * values; and false otherwise.
-     * 大于的情况为什么也对呢。钱可以丢失？
+
      *
      */
     public boolean isValidTx(Transaction tx) {
-        // IMPLEMENT THIS
-
-        // check `all outputs claimed by tx are in the current UTXO pool` [1]
-        // 这句话应该理解成，output 都在 pool 中，
-        // 这一点非常难理解，input.signature 是 recipient 自己放上去的，而不是由上一个人发过来的
-        // 好好思考下
         for (Transaction.Input input : tx.getInputs()) {
             if (utxoPool.contains(new UTXO(input.prevTxHash, input.outputIndex)) == false) {
                 return false;
             }
         }
 
-        // check `the signature on each input of tx are valid` [2]
-        // we can get the public key from utxo pool
-        // what's message? 应该就是 transaction id
-        // how to get the public key ?
         double inSum = 0;
 
         for (int i = 0; i < tx.getInputs().size(); i++) {
@@ -96,11 +75,32 @@ public class TxHandler {
      */
     public Transaction[] handleTxs(Transaction[] possibleTxs) {
         // IMPLEMENT THIS
+        List<Transaction> transactions = new ArrayList<Transaction>();
 
+        for (Transaction transaction : possibleTxs) {
+            if (isValidTx(transaction)) {
+                transactions.add(transaction);
 
+                // do i need to delete all the utxo with signature prevTxHash?
+                for(int i = 0; i < transaction.getInputs().size(); i ++) {
+                    Transaction.Input input = transaction.getInput(i);
+                    utxoPool.removeUTXO(new UTXO(input.prevTxHash, input.outputIndex));
+                }
 
+                for(int i = 0; i < transaction.getOutputs().size(); i ++) {
+                    UTXO utxo = new UTXO(transaction.getHash(), i);
+                    Transaction.Output output = transaction.getOutput(i);
+                    utxoPool.addUTXO(utxo, output);
+                }
+            }
+        }
 
-        return null;
+        Transaction[] result = new Transaction[transactions.size()];
+        for(int i = 0; i < result.length; i ++) {
+            result[i] = transactions.get(i);
+        }
+
+        return result;
     }
 
 }
