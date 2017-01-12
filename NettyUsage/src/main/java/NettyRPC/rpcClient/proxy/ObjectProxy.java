@@ -3,9 +3,8 @@ package NettyRPC.rpcClient.proxy;
 import NettyRPC.protocol.RpcRequest;
 import NettyRPC.rpcClient.ConnectionManager;
 import NettyRPC.rpcClient.RPCFuture;
-import NettyRPC.rpcClient.RequestQueue;
 import NettyRPC.rpcClient.RpcClientHandler;
-import NettyRPC.rpcServer.RpcHandler;
+
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;

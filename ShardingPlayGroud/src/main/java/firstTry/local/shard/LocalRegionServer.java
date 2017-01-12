@@ -1,21 +1,20 @@
 package firstTry.local.shard;
 
-import com.sun.corba.se.impl.naming.cosnaming.NamingContextDataStore;
-import firstTry.core.data.DataStore;
-import firstTry.core.model.TableAndShard;
+import firstTry.core.shard.TableAndShard;
 import firstTry.core.shard.AbstractRegionServer;
+import firstTry.core.shard.Shard;
 
 import java.util.Map;
 
 /**
  * Created by xinszhou on 06/01/2017.
  */
-public class LocalRegionServer extends AbstractRegionServer {
-
-    Map<TableAndShard, DataStore> knownData;
-
-    @Override
-    public void handleMessage(Object o) {
-
-    }
-}
+//public class LocalRegionServer<K, V> extends AbstractRegionServer {
+//
+//    Map<TableAndShard, Shard<K, V>> managedData;
+//
+//    @Override
+//    public void handleMessage(Object o) {
+//
+//    }
+//}

@@ -13,6 +13,8 @@ public class Crypto {
      * key {@code pubKey}. Internally, this uses RSA signature, but the student does not
      * have to deal with any of the implementation details of the specific signature
      * algorithm
+     *
+     * ??? 为什么 verify signature 还需要原始的 message?
      */
     public static boolean verifySignature(PublicKey pubKey, byte[] message, byte[] signature) {
         Signature sig = null;

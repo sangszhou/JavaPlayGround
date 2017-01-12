@@ -21,6 +21,7 @@ public class Transaction {
         public int outputIndex;
         /**
          * the signature produced to check validity
+         * 这个 signature 是谁的 Signature 很关键
          */
         public byte[] signature;
 
@@ -58,6 +59,7 @@ public class Transaction {
 
     /**
      * hash of the transaction, its unique id
+     * 这个 hash 值是什么时候算出来的， 最后算出来的，包含所有信息的 digest
      */
     private byte[] hash;
     private ArrayList<Input> inputs;
@@ -99,6 +101,10 @@ public class Transaction {
         }
     }
 
+    /**
+     * @param index
+     * @return 用来做签名的 raw data
+     */
     public byte[] getRawDataToSign(int index) {
         // ith input and all outputs
         ArrayList<Byte> sigData = new ArrayList<Byte>();
@@ -111,16 +117,19 @@ public class Transaction {
         ByteBuffer b = ByteBuffer.allocate(Integer.SIZE / 8);
         b.putInt(in.outputIndex);
         byte[] outputIndex = b.array();
+
+        // input prevTxHash add to sigData
         if (prevTxHash != null)
             for (int i = 0; i < prevTxHash.length; i++)
                 sigData.add(prevTxHash[i]);
 
+        // input index add to sigData
         for (int i = 0; i < outputIndex.length; i++)
             sigData.add(outputIndex[i]);
 
         for (Output op : outputs) {
             ByteBuffer bo = ByteBuffer.allocate(Double.SIZE / 8);
-            bo.putDouble(op.value);
+            bo.putDouble(op.value); // money number
             byte[] value = bo.array();
             byte[] addressBytes = op.address.getEncoded();
             for (int i = 0; i < value.length; i++)
@@ -140,6 +149,7 @@ public class Transaction {
         return sigD;
     }
 
+    // 这是为了搞签名，放弃其他 input 么
     public void addSignature(byte[] signature, int index) {
         inputs.get(index).addSignature(signature);
     }
@@ -157,13 +167,16 @@ public class Transaction {
             byte[] outputIndex = b.array();
             byte[] signature = in.signature;
 
+            // add pre transaction id hash
             if (prevTxHash != null)
                 for (int i = 0; i < prevTxHash.length; i++)
                     rawTx.add(prevTxHash[i]);
 
+            // add pre transaction index
             for (int i = 0; i < outputIndex.length; i++)
                 rawTx.add(outputIndex[i]);
 
+            // add signature, 这个 signature 是添加以前完成的么
             if (signature != null)
                 for (int i = 0; i < signature.length; i++)
                     rawTx.add(signature[i]);
@@ -192,6 +205,7 @@ public class Transaction {
         return tx;
     }
 
+    @Override
     public void finalize() {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");

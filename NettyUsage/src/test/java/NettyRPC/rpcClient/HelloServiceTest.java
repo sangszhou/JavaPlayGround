@@ -13,7 +13,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 /**
  * Created by xinszhou on 06/12/2016.
  */
-
 @RunWith(SpringJUnit4ClassRunner.class) // to enable autowire work
 @ContextConfiguration(locations = "classpath:client-spring.xml")
 public class HelloServiceTest {

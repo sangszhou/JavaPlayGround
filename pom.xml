@@ -18,6 +18,9 @@
         <module>JVMPerformance</module>
         <module>ShardingPlayGroud</module>
         <module>NettyUsage</module>
+        <module>Elasticsearch</module>
+        <module>Docs</module>
+        <module>PrincetonBitcoinCoursera</module>
     </modules>
 
     <dependencies>
@@ -51,6 +54,14 @@
             <artifactId>logback-core</artifactId>
             <version>1.1.8</version>
         </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
 
 
     </dependencies>

@@ -1,4 +1,4 @@
-package firstTry.core.model;
+package firstTry.core.data;
 
 /**
  * Created by xinszhou on 06/01/2017.

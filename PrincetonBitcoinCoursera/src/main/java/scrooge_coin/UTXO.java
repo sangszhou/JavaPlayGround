@@ -6,6 +6,8 @@ import java.util.Arrays;
  * UTXO 声明所有钱的来源，他是 ground truth
  * UTXO 本来应该是一个 Transaction 的集合，但是为了方便些代码，老师有意把这个数据结构 flat 了一下
  * 相当于， key 变成了 (txHash, index) 的map, 其中 index 是 txHash 对应的某个 output
+ *
+ * unspent transaction output
  */
 public class UTXO implements Comparable<UTXO> {
 

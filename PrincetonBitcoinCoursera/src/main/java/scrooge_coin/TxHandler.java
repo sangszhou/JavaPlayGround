@@ -20,16 +20,26 @@ public class TxHandler {
     /**
      * @return true if:
      * (1) all outputs claimed by {@code tx} are in the current UTXO pool,
+     *  tx 的 input 在 UTXO pool 才对啊？
+     *
      * (2) the signatures on each input of {@code tx} are valid,
+     *  验证 input signature valid 的意义何在？
+     *
      * (3) no UTXO is claimed multiple times by {@code tx},
+     *  应该指的是， UTXO 作为 input 只能出现一次
+     *
      * (4) all of {@code tx}s output values are non-negative, and
+     *
      * (5) the sum of {@code tx}s input values is greater than or equal to the sum of its output
      * values; and false otherwise.
+     * 大于的情况为什么也对呢。钱可以丢失？
+     *
      */
     public boolean isValidTx(Transaction tx) {
         // IMPLEMENT THIS
 
         // check `all outputs claimed by tx are in the current UTXO pool` [1]
+        // 这句话应该理解成，output 都在 pool 中，
         // 这一点非常难理解，input.signature 是 recipient 自己放上去的，而不是由上一个人发过来的
         // 好好思考下
         for (Transaction.Input input : tx.getInputs()) {
@@ -44,12 +54,14 @@ public class TxHandler {
         // how to get the public key ?
         double inSum = 0;
 
-        for(int i = 0; i < tx.getInputs().size(); i ++) {
+        for (int i = 0; i < tx.getInputs().size(); i++) {
             Transaction.Input input = tx.getInput(i);
             UTXO utxo = new UTXO(input.prevTxHash, input.outputIndex);
             Transaction.Output txOutput = utxoPool.getTxOutput(utxo);
             inSum += txOutput.value;
-            Crypto.verifySignature(txOutput.address, tx.getRawDataToSign(i), input.signature);
+            if(!Crypto.verifySignature(txOutput.address, tx.getRawDataToSign(i), input.signature)) {
+                return false;
+            }
         }
 
         // check `no UTXO is claimed multiple times by tx` [3]
@@ -65,8 +77,8 @@ public class TxHandler {
 
         // [4][5]
         double outSum = 0;
-        for (Transaction.Output output: tx.getOutputs()) {
-            if(output.value < 0) return false;
+        for (Transaction.Output output : tx.getOutputs()) {
+            if (output.value < 0) return false;
             outSum += output.value;
         }
 
@@ -84,6 +96,10 @@ public class TxHandler {
      */
     public Transaction[] handleTxs(Transaction[] possibleTxs) {
         // IMPLEMENT THIS
+
+
+
+
         return null;
     }
 
