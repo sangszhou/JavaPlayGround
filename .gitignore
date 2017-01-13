@@ -1,4 +1,8 @@
 .idea/
 JavaPlayGround.iml
+target/
 */target
 *.iml
+*.json
+*.class
+

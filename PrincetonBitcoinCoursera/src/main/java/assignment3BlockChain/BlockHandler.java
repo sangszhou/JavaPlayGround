@@ -28,18 +28,27 @@ public class BlockHandler {
      * create a new {@code block} over the max height {@code block}
      */
     public Block createBlock(PublicKey myAddress) {
+
         Block parent = blockChain.getMaxHeightBlock();
         byte[] parentHash = parent.getHash();
         Block current = new Block(parentHash, myAddress);
+
+        // transactions that already in block
         UTXOPool uPool = blockChain.getMaxHeightUTXOPool();
+
+        // transactions that used to on that pool
         TransactionPool txPool = blockChain.getTransactionPool();
+
         TxHandler handler = new TxHandler(uPool);
+
         Transaction[] txs = txPool.getTransactions().toArray(new Transaction[0]);
         Transaction[] rTxs = handler.handleTxs(txs);
+
         for (int i = 0; i < rTxs.length; i++)
             current.addTransaction(rTxs[i]);
 
         current.finalize();
+
         if (blockChain.addBlock(current))
             return current;
         else

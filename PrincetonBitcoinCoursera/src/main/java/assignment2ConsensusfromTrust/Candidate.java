@@ -1,6 +1,7 @@
 package assignment2ConsensusfromTrust;
 
 public class Candidate {
+
     Transaction tx;
     int sender;
 
@@ -8,4 +9,5 @@ public class Candidate {
         this.tx = tx;
         this.sender = sender;
     }
+
 }

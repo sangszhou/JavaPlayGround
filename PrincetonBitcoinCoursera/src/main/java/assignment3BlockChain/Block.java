@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 public class Block {
 
+    // a transaction fee to myself
     public static final double COINBASE = 25;
 
     private byte[] hash;

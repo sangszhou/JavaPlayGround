@@ -21,6 +21,7 @@
         <module>Elasticsearch</module>
         <module>Docs</module>
         <module>PrincetonBitcoinCoursera</module>
+        <module>Crawler</module>
     </modules>
 
     <dependencies>

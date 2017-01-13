@@ -28,27 +28,29 @@ public class Simulation {
 
         // pick which nodes are malicious and which are compliant
         Node[] nodes = new Node[numNodes];
+
         for (int i = 0; i < numNodes; i++) {
-            if (Math.random() < p_malicious)
-                // When you are ready to try testing with malicious nodes, replace the
-                // instantiation below with an instantiation of a MaliciousNode
-                nodes[i] = new MalDoNothing(p_graph, p_malicious, p_txDistribution, numRounds);
-            else
+//            if (Math.random() < p_malicious)
+//                // When you are ready to try testing with malicious nodes, replace the
+//                // instantiation below with an instantiation of a MaliciousNode
+//                nodes[i] = new MalDoNothing(p_graph, p_malicious, p_txDistribution, numRounds);
+//            else
                 nodes[i] = new CompliantNode(p_graph, p_malicious, p_txDistribution, numRounds);
         }
 
 
         // initialize random follow graph
         boolean[][] followees = new boolean[numNodes][numNodes]; // followees[i][j] is true iff i follows j
+
+        // .1 is hard test or .3 ?
         for (int i = 0; i < numNodes; i++) {
             for (int j = 0; j < numNodes; j++) {
                 if (i == j) continue;
                 if (Math.random() < p_graph) { // p_graph is .1, .2, or .3
-                    followees[i][j] = true;
+                    followees[i][j] = true; // i is a followee of node j
                 }
             }
         }
-
         // notify all nodes of their followees
         for (int i = 0; i < numNodes; i++)
             nodes[i].setFollowees(followees[i]);
@@ -68,13 +70,15 @@ public class Simulation {
         // is random with probability p_txDistribution for each Transaction-Node pair.
         for (int i = 0; i < numNodes; i++) {
             HashSet<Transaction> pendingTransactions = new HashSet<Transaction>();
+
+            // at least every node has some sequence of transaction
             for (Integer txID : validTxIds) {
                 if (Math.random() < p_txDistribution) // p_txDistribution is .01, .05, or .10.
                     pendingTransactions.add(new Transaction(txID));
             }
+
             nodes[i].setPendingTransaction(pendingTransactions);
         }
-
 
         // Simulate for numRounds times
         for (int round = 0; round < numRounds; round++) { // numRounds is either 10 or 20
@@ -87,6 +91,7 @@ public class Simulation {
 
             for (int i = 0; i < numNodes; i++) {
                 Set<Transaction> proposals = nodes[i].sendToFollowers();
+
                 for (Transaction tx : proposals) {
                     if (!validTxIds.contains(tx.id))
                         continue; // ensure that each tx is actually valid
@@ -94,6 +99,7 @@ public class Simulation {
                     for (int j = 0; j < numNodes; j++) {
                         if (!followees[j][i]) continue; // tx only matters if j follows i
 
+                        // initialization
                         if (!allProposals.containsKey(j)) {
                             Set<Candidate> candidates = new HashSet<>();
                             allProposals.put(j, candidates);
@@ -102,7 +108,6 @@ public class Simulation {
                         Candidate candidate = new Candidate(tx, i);
                         allProposals.get(j).add(candidate);
                     }
-
                 }
             }
 
@@ -115,10 +120,14 @@ public class Simulation {
 
         // print results
         for (int i = 0; i < numNodes; i++) {
+
             Set<Transaction> transactions = nodes[i].sendToFollowers();
+
             System.out.println("Transaction ids that Node " + i + " believes consensus on:");
+
             for (Transaction tx : transactions)
                 System.out.println(tx.id);
+
             System.out.println();
             System.out.println();
         }
