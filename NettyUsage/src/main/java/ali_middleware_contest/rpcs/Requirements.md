@@ -1,0 +1,2 @@
+本次大赛赛题分为两个方向：RPC（Remote Procedure Call ）远程过程调用、MOM（Message-Oriented Middleware）面向消息的中间件。
+其中，RPC是分布式场景下的基础组件之一，提供点对点通信的功能，为业务做系统拆分提供了通讯工具。这次的赛题，RPC作为资格题，降了不少难度。赛题聚焦在了rpc-core这个模块上。实际上同学们实现的RPC框架，可能只是一个真正意义上的分布式RPC框架中的核心调用模块。RPC的本质的确是IO和序列化，但在阿里巴巴如此复杂的业务场景下，用户对于RPC框架的要求，就不仅仅是传输一个ResultDO的对象这么简单了。一个工业级的RPC框架，是依托于RegistryCenter&ConfigServer，提供高性能、可扩展、高可用、可治理能力的远程调用框架。

@@ -37,7 +37,6 @@ public class ClusterRegionServer extends AbstractRegionServer {
         tablesInfo = new HashMap<>();
     }
 
-
     @Override
     public String getId() {
         return null;
