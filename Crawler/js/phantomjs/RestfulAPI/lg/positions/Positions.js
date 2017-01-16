@@ -1,6 +1,6 @@
 function getPositionInfo(companyId, pageNm, page) {
 
-    var filePath = '/ws/github/JavaPlayGround/Crawler/js/phantomjs/RestfulAPI/lg/positions/output/'+ companyId + '-' + pageNm;
+    var filePath = '/ws/github/JavaPlayGround/Crawler/js/phantomjs/RestfulAPI/lg/positions/output/' + companyId + '-' + pageNm;
     var url = 'https://www.lagou.com/gongsi/searchPosition.json?positionFirstType=技术&companyId=' + companyId + '&pageNo=' + pageNm;
 
     page.open(url, settings, function (status) {
@@ -18,7 +18,7 @@ function getCompanyPositionInfo(companyId, maxPageNum, page) {
     var intervalId = setInterval(function (page) {
         getPositionInfo(companyId, pageNum, page);
         pageNum = pageNum + 1;
-        if(pageNum > maxPageNum) {
+        if (pageNum > maxPageNum) {
             clearInterval(intervalId);
         }
     }, tickAfter * 1100);
@@ -31,13 +31,13 @@ function getCityPositionInfo(cityName) {
     var page = require('webpage').create();
 
     // @fixme what if the json file not exist?
-    for(i = 0; i < 70; i ++) {
+    for (i = 0; i < 70; i++) {
         var filePath = baseDir + i + '.json';
         var companiesInfo = fs.read(filePath);
         companiesInfo = JSON.parse(companiesInfo); // convert to json
         var results = companiesInfo['result'];
 
-        for(company in results) {
+        for (company in results) {
             var companyId = company['companyId'];
             var metaUrl = 'https://www.lagou.com/gongsi/searchPosition.json?positionFirstType=技术&pageNo=1&companyId=' + companyId
 
