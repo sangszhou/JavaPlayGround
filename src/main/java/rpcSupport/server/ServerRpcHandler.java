@@ -20,6 +20,13 @@ public class ServerRpcHandler extends SimpleChannelInboundHandler<RpcRequest> {
         this.registeredServices = registeredServices;
     }
 
+    @Override
+    public void channelRegistered(ChannelHandlerContext ctx) throws Exception {
+        ctx.fireChannelRegistered();
+        System.out.println("client connected to server");
+    }
+
+
     // @todo delegate the operation to another thread
     private Object handle(RpcRequest request) throws Exception {
         String className = request.getClassName();
@@ -27,6 +34,7 @@ public class ServerRpcHandler extends SimpleChannelInboundHandler<RpcRequest> {
         Class<?>[] parameterTypes = request.getParameterTypes();
         Object[] parameters = request.getParameters();
 
+        // will throw exception if no matching service
         // cglib reflection
         Object serviceBean = registeredServices.get(className);
         Class<?> cls = serviceBean.getClass();
@@ -41,7 +49,6 @@ public class ServerRpcHandler extends SimpleChannelInboundHandler<RpcRequest> {
         FastMethod fastMethod = fastClass.getMethod(methodName, parameterTypes);
         return fastMethod.invoke(serviceBean, parameters);
     }
-
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, RpcRequest msg) throws Exception {
@@ -64,4 +71,10 @@ public class ServerRpcHandler extends SimpleChannelInboundHandler<RpcRequest> {
                 System.out.println("response sent for request id: " + msg.getRequestId()));
 
     }
+
+    @Override
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable throwable) {
+        throwable.printStackTrace();
+    }
+
 }

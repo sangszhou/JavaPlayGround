@@ -1,6 +1,7 @@
 package disJobFramework.core.scheduler;
 
-import javafx.concurrent.Task;
+
+import disJobFramework.core.task.Task;
 
 /**
  * Created by xinszhou on 1/14/17.

@@ -28,7 +28,7 @@ public class RPCServer {
         serviceBean.put(fullClassName, object);
     }
 
-    public void start() {
+    public void start(String host, int port) {
         EventLoopGroup bossGroup = new NioEventLoopGroup(1);
         EventLoopGroup workerGroup = new NioEventLoopGroup(4);
 
@@ -46,7 +46,7 @@ public class RPCServer {
                         }
                     }).option(ChannelOption.SO_BACKLOG, 128)
                     .childOption(ChannelOption.SO_KEEPALIVE, true);
-            ChannelFuture future = bootstrap.bind("localhost", 9999).sync();
+            ChannelFuture future = bootstrap.bind(host, port).sync();
             System.out.println("rpc server is started");
             future.channel().closeFuture().sync();
         } catch (Exception e) {

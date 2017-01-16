@@ -1,17 +1,18 @@
 package disJobFramework.cluster.sheduler;
 
 import disJobFramework.core.scheduler.TaskQueue;
-import javafx.concurrent.Task;
+import disJobFramework.core.task.Task;
 
 import java.util.Deque;
 import java.util.LinkedList;
+import java.util.concurrent.ConcurrentLinkedDeque;
 
 /**
  * Created by xinszhou on 1/14/17.
  */
-public class InMemoryQueue implements TaskQueue {
+public class InMemoryTaskQueue implements TaskQueue {
 
-    Deque<Task> taskQueue = new LinkedList<>();
+    Deque<Task> taskQueue = new ConcurrentLinkedDeque<>();
 
     @Override
     public void init() {

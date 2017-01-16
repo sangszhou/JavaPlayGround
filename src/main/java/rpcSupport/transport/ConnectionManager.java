@@ -99,6 +99,7 @@ public class ConnectionManager {
         connectedServer.put(remoteServerAddress, handler);
     }
 
+    //@todo make it optional
     public RpcClientHandler getHandler() {
         if (connectedServer.size() == 0) {
             return null;

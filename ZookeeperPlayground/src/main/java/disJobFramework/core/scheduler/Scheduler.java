@@ -1,5 +1,6 @@
 package disJobFramework.core.scheduler;
 
+import disJobFramework.core.client.Resource;
 import disJobFramework.core.client.Worker;
 import disJobFramework.core.task.Task;
 
@@ -9,10 +10,10 @@ import disJobFramework.core.task.Task;
 public interface Scheduler {
 
     // if this method needed?
-    void onWorkerConnected(Worker worker);
+//    void onWorkerConnected(Worker worker);
 
     void onTaskSubmitted(Task task);
 
-    void onWorkerRetrieveTask(Worker worker);
+    Task onWorkerRetrieveTask(Resource resource);
 
 }

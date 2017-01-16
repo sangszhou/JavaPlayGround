@@ -52,6 +52,7 @@ public class RpcClientHandler extends SimpleChannelInboundHandler<RpcResponse> {
             System.out.println("in flight request has already in the flight requests");
             return inFlightRequest.get(request.getRequestId());
         }
+
         System.out.println("send request with id: " + request.getRequestId());
         RPCFuture future = new RPCFuture(request);
         inFlightRequest.put(request.getRequestId(), future);

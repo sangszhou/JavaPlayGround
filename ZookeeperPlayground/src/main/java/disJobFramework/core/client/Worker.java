@@ -1,14 +1,18 @@
 package disJobFramework.core.client;
 
-import javafx.concurrent.Task;
+import disJobFramework.core.task.Task;
 
 /**
  * Created by xinszhou on 1/14/17.
  */
 public interface Worker {
 
+    String getHost();
+
+    int getPort();
+
     void executeTask(Task task);
 
-    boolean connect(String host, int port);
+    boolean fetchTask();
 
 }
