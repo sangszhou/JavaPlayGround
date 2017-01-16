@@ -5,8 +5,6 @@ package util;
  */
 public class ZookeeperClient {
 
-
-
     public class ZookeeperConnectionException extends Exception {
         public ZookeeperConnectionException(String message, Throwable cause) {
             super(message, cause);

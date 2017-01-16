@@ -11,5 +11,4 @@ public interface DataStore<K, V> {
 
     V get(K key);
 
-
 }
