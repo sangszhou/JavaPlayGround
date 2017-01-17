@@ -1,5 +1,6 @@
 package disJobFramework.cluster.boss;
 
+import disJobFramework.cluster.taskes.ComplexTask;
 import disJobFramework.cluster.taskes.HelloWorldTask;
 import disJobFramework.core.client.Boss;
 import disJobFramework.core.scheduler.Scheduler;
@@ -73,15 +74,16 @@ public class ClusterBoss implements Boss {
 
 
     public static void main(String args[]) {
-        String schedulerHost = "localhost";
+        String schedulerHost = "10.140.42.170";
         int schedulerPort = 7777;
 
         ConnectionManager connectionManager = new ConnectionManager();
         connectionManager.connectServer(new InetSocketAddress(schedulerHost, schedulerPort));
 
 
-        Task simpleTask = new HelloWorldTask("1");
+//        Task simpleTask = new HelloWorldTask("1");
 
+        Task simpleTask = new ComplexTask();
         Boss boss = new ClusterBoss(connectionManager);
         boss.submitTask(simpleTask);
     }

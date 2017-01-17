@@ -92,7 +92,7 @@ public class ClusterWorker implements Worker {
     }
 
     public static void main(String args[]) {
-        String host = "localhost";
+        String host = "10.140.42.170";
         int port = 7777;
         ConnectionManager connectionManager = new ConnectionManager();
         connectionManager.connectServer(new InetSocketAddress(host, port));
