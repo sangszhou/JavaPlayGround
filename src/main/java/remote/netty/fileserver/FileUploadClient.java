@@ -20,8 +20,8 @@ public class FileUploadClient {
     public static final int CLIENT_COUNT = 1;
 
     public static void main(String args[]) {
-        for(int i = 0; i < CLIENT_COUNT; i++){
-            new Thread(new Runnable(){
+        for (int i = 0; i < CLIENT_COUNT; i++) {
+            new Thread(new Runnable() {
                 @Override
                 public void run() {
                     try {
@@ -36,7 +36,36 @@ public class FileUploadClient {
 
     }
 
-    private static void uploadFile() throws Exception{
+    private static void uploadFile(String host, int port, String filePath, String fileType) throws Exception {
+        File file = new File(filePath);
+
+        HttpEntity httpEntity = MultipartEntityBuilder.create()
+                .addBinaryBody("file", file, ContentType.create(fileType), file.getName())
+                .build();
+
+        CloseableHttpClient httpclient = HttpClients.createDefault();
+        HttpPost httppost = new HttpPost("http://" + host + ":" + port);
+
+        httppost.setEntity(httpEntity);
+        System.out.println("executing request " + httppost.getRequestLine());
+
+        CloseableHttpResponse response = httpclient.execute(httppost);
+
+        System.out.println("----------------------------------------");
+        System.out.println(response.getStatusLine());
+
+        HttpEntity resEntity = response.getEntity();
+
+        if (resEntity != null) {
+            System.out.println("Response content length: " + resEntity.getContentLength());
+        }
+
+        EntityUtils.consume(resEntity);
+
+        response.close();
+    }
+
+    private static void uploadFile() throws Exception {
         File file = new File("/ws/github/JavaPlayGround/src/main/java/remote/netty/fileserver/small.jpg");
 
         HttpEntity httpEntity = MultipartEntityBuilder.create()

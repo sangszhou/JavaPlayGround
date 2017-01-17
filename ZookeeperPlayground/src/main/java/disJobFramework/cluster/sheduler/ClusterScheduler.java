@@ -4,6 +4,7 @@ import disJobFramework.core.client.Resource;
 import disJobFramework.core.client.Worker;
 import disJobFramework.core.scheduler.Scheduler;
 import disJobFramework.core.task.Task;
+import remote.netty.fileserver.HttpStaticFileServer;
 import rpcSupport.server.RPCServer;
 
 import java.util.LinkedList;
@@ -17,9 +18,14 @@ public class ClusterScheduler implements Scheduler {
     List<Worker> restWorkers;
     InMemoryTaskQueue taskQueue;
 
+    String uploadedFileDir = "";
+
+    HttpStaticFileServer httpStaticFileServer;
+
     public ClusterScheduler() {
         restWorkers = new LinkedList<>();
         taskQueue = new InMemoryTaskQueue();
+        httpStaticFileServer = new HttpStaticFileServer(5566);
     }
 
     @Override
@@ -58,7 +64,7 @@ public class ClusterScheduler implements Scheduler {
         // note this is scheduler's name, not self
         rpcServer.registerBean(Scheduler.class.getName(), clusterScheduler);
 
-        rpcServer.start("localhost", 7777);
+        rpcServer.start("10.140.42.170", 7777);
     }
 
 }

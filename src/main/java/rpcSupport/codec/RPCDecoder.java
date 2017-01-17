@@ -35,5 +35,8 @@ public class RPCDecoder extends ByteToMessageDecoder {
         in.readBytes(data);
         Object obj = ProtoBufSerializationUtil.deserialize(data, genericClass);
         out.add(obj);
+
+        System.out.println("RPC decoder decode success");
+
     }
 }

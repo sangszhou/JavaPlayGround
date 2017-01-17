@@ -21,6 +21,8 @@ public class RPCEncoder extends MessageToByteEncoder {
             byte[] data = ProtoBufSerializationUtil.serialize(msg);
             out.writeInt(data.length);
             out.writeBytes(data);
+        } else {
+            System.out.println("error: incoming request is not instanceof generic request class" );
         }
     }
 }
