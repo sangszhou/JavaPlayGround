@@ -9,6 +9,12 @@ import disJobFramework.core.task.TaskState;
 public class HelloWorldTask implements Task {
 
     String taskId;
+    String jarLocation;
+
+
+    public HelloWorldTask() {
+
+    }
 
     public HelloWorldTask(String taskId) {
         this.taskId = taskId;
@@ -17,6 +23,16 @@ public class HelloWorldTask implements Task {
     @Override
     public String getTaskId() {
         return taskId;
+    }
+
+    @Override
+    public void setJarLocation(String jarLocation) {
+        this.jarLocation = jarLocation;
+    }
+
+    @Override
+    public String getJarLocation() {
+        return jarLocation;
     }
 
     @Override

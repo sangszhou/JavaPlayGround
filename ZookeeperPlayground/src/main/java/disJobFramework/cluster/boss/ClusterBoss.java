@@ -1,10 +1,10 @@
 package disJobFramework.cluster.boss;
 
 import disJobFramework.cluster.taskes.ComplexTask;
-import disJobFramework.cluster.taskes.HelloWorldTask;
 import disJobFramework.core.client.Boss;
 import disJobFramework.core.scheduler.Scheduler;
 import disJobFramework.core.task.Task;
+import remote.netty.fileserver.FileUploadClient;
 import rpcSupport.client.RpcClientHandler;
 import rpcSupport.protocol.RPCFuture;
 import rpcSupport.protocol.RpcRequest;
@@ -25,6 +25,14 @@ public class ClusterBoss implements Boss {
 
     public ClusterBoss(ConnectionManager connectionManager) {
         this.connectionManager = connectionManager;
+    }
+
+    public void submitJar(String host, int port, String filePath) {
+        try {
+            FileUploadClient.uploadFile(host, port, filePath);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -52,6 +60,7 @@ public class ClusterBoss implements Boss {
         }
     }
 
+
     @Override
     public void retrieveTask(Task task) {
         System.out.println("No implemented yet");
@@ -76,16 +85,22 @@ public class ClusterBoss implements Boss {
     public static void main(String args[]) {
         String schedulerHost = "10.140.42.170";
         int schedulerPort = 7777;
+        int jarPort = 5566;
+
+        String jarFilePath = "/ws/github/JavaPlayGround/ZookeeperPlayground/src/main/java/disJobFramework/jarsStorage/bossJars/ZookeeperPlayground-1.0-SNAPSHOT-jar-with-dependencies.jar";
 
         ConnectionManager connectionManager = new ConnectionManager();
         connectionManager.connectServer(new InetSocketAddress(schedulerHost, schedulerPort));
 
+//      Task simpleTask = new HelloWorldTask("1");
 
-//        Task simpleTask = new HelloWorldTask("1");
-
-        Task simpleTask = new ComplexTask();
+//        Task simpleTask = new ComplexTask();
         Boss boss = new ClusterBoss(connectionManager);
-        boss.submitTask(simpleTask);
+//      boss.submitTask(simpleTask);
+
+
+        boss.submitJar(schedulerHost, jarPort, jarFilePath);
+
     }
 
 }
