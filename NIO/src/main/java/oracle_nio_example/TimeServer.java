@@ -42,7 +42,7 @@ public class TimeServer {
     public static void main(String args[]) throws Exception {
         ServerSocketChannel ssc = setup();
 
-        for(;;) {
+        for (; ; ) {
             server(ssc);
         }
 

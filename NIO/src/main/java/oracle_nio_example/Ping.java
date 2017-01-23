@@ -21,7 +21,6 @@ public class Ping {
     // The port we'll actually use
     static int port = DAYTIME_PORT;
 
-
     // Representation of a ping target
     static class Target {
 
