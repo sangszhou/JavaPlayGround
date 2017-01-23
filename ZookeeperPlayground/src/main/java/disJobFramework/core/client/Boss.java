@@ -10,4 +10,6 @@ public interface Boss {
     void submitTask(Task task);
 
     void retrieveTask(Task task);
+
+    void submitJar(String host, int port, String filePath);
 }

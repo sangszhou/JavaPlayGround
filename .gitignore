@@ -5,3 +5,10 @@ target/
 *.iml
 *.json
 *.class
+NIO/NIO.iml
+LoadBalance/LoadBalance.iml
+KafkaTech/KafkaTech.iml
+JVMPerformance/JVMPerformance.iml
+Elasticsearch/Elasticsearch.iml
+Docs/Docs.iml
+AOP/AOP.iml

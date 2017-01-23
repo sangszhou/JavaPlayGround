@@ -11,6 +11,10 @@ public interface Task<V> extends Callable<V>, Serializable {
 
     String getTaskId();
 
+    void setJarLocation(String jarLocation);
+
+    String getJarLocation();
+
     TaskState getTaskState();
 
 }

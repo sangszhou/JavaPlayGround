@@ -1,7 +1,5 @@
 package disJobFramework.cluster.worker;
 
-import disJobFramework.cluster.boss.ClusterBoss;
-import disJobFramework.cluster.taskes.HelloWorldTask;
 import disJobFramework.core.client.Resource;
 import disJobFramework.core.client.Worker;
 import disJobFramework.core.scheduler.Scheduler;

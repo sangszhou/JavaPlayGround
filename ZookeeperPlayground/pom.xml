@@ -7,6 +7,7 @@
         <groupId>JavaPlayGround</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
+
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>ZookeeperPlayground</artifactId>
@@ -50,10 +51,9 @@
 
         <dependency>
             <groupId>JavaPlayGround</groupId>
-            <artifactId>JavaPlayGround</artifactId>
+            <artifactId>Common</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-
     </dependencies>
 
 </project>
