@@ -112,13 +112,10 @@ public class ZkMaster implements Master {
             if (clusterMetaInfo.get(tableName) == null) {
                 throw new Exception("cannot delete a non-existing table");
             }
-
-            RegionServerState choosenServer = clusterMetaInfo.get(tableName);
-            zkClient.delete().forPath(ClusterInfo.zkRegionServerPath + "/" + choosenServer.getId() + "/" + tableName);
-
+            RegionServerState chosenServer = clusterMetaInfo.get(tableName);
+            zkClient.delete().forPath(ClusterInfo.zkRegionServerPath + "/" + chosenServer.getId() + "/" + tableName);
             return true;
         }
-
     }
 
     @Override
@@ -127,7 +124,6 @@ public class ZkMaster implements Master {
             if (clusterMetaInfo.get(tableName) == null) {
                 throw new Exception("table not exist");
             }
-
             return clusterMetaInfo.get(tableName);
 
         }

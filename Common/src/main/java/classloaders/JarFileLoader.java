@@ -38,8 +38,6 @@ public class JarFileLoader extends URLClassLoader {
         return findClass(className);
     }
 
-
-
     public static JarFileLoader loadJars(File dir) throws Exception {
         List<URL> list = getJarFilesList(dir);
         URL[] url = list.toArray(new URL[list.size()]);

@@ -1,6 +1,5 @@
 package disJobFramework.cluster.boss;
 
-import disJobFramework.cluster.taskes.ComplexTask;
 import disJobFramework.cluster.taskes.HelloWorldTask;
 import disJobFramework.core.client.Boss;
 import disJobFramework.core.task.Task;
@@ -8,8 +7,6 @@ import org.junit.Test;
 import rpcSupport.transport.ConnectionManager;
 
 import java.net.InetSocketAddress;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by xinszhou on 1/17/17.
@@ -47,9 +44,9 @@ public class ClusterBossTest {
         connectionManager.connectServer(new InetSocketAddress(schedulerHost, schedulerPort));
         Boss boss = new ClusterBoss(connectionManager);
 
-        System.out.println("before send time: " + System.currentTimeMillis()/1000);
+        System.out.println("before send time: " + System.currentTimeMillis() / 1000);
 //        boss.submitJar(schedulerHost, jarPort, jarFilePath);
-        System.out.println("after send time: " + System.currentTimeMillis()/1000);
+        System.out.println("after send time: " + System.currentTimeMillis() / 1000);
 
         Task simpleTask = new HelloWorldTask("[hello world task]");
         boss.submitTask(simpleTask);

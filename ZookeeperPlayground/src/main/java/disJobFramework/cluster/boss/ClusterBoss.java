@@ -1,6 +1,7 @@
 package disJobFramework.cluster.boss;
 
-import disJobFramework.cluster.taskes.ComplexTask;
+//import disJobFramework.cluster.taskes.ComplexTask;
+
 import disJobFramework.core.client.Boss;
 import disJobFramework.core.scheduler.Scheduler;
 import disJobFramework.core.task.Task;

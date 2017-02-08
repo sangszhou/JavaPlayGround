@@ -19,60 +19,68 @@ import static java.lang.Class.forName;
  */
 public class RPCDecoder extends ByteToMessageDecoder {
 
-    private Class<?> genericClass;
-
-    private JarClassLoader classLoader;
+//    private Class<?> genericClass;
+//    private JarClassLoader classLoader;
 
     public RPCDecoder(Class<?> genericClass) {
-        this.genericClass = genericClass;
-        try {
-            classLoader = new JarClassLoader("/ws/github/JavaPlayGround/ZookeeperPlayground/src/main/java/disJobFramework/jarsStorage/schedulerJars/ZookeeperPlayground-1.0-SNAPSHOT-jar-with-dependencies.jar");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        this.genericClass = genericClass;
+//        try {
+//            classLoader = new JarClassLoader("/ws/github/JavaPlayGround/ZookeeperPlayground/src/main/java/disJobFramework/jarsStorage/schedulerJars/ZookeeperPlayground-1.0-SNAPSHOT-jar-with-dependencies.jar");
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
     }
+
 
     @Override
     protected void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception {
-        if (in.readableBytes() < 4) {
-            return;
-        }
-
-        in.markReaderIndex();
-        int dataLength = in.readInt();
-
-        if (in.readableBytes() < dataLength) {
-            in.resetReaderIndex();
-            return;
-        }
-
+        int dataLength = in.readableBytes();
         byte[] data = new byte[dataLength];
         in.readBytes(data);
-
-//        Class protoUtil = Class.forName("rpcSupport.codec.ProtoBufSerializationUtil", true, classLoader);
-
-        ArrayList<String> ar = new ArrayList<>();
-        ar.size();
-
-//        Class cplxTs = classLoader.loadClass("disJobFramework/cluster/taskes/ComplexTask");
-
-        Thread.currentThread().setContextClassLoader(classLoader);
-
-        Class protoUtil = classLoader.loadClass("rpcSupport/codec/ProtoBufSerializationUtil");
-
-        Object seri = protoUtil.newInstance();
-
-        Method[] ms = protoUtil.getMethods();
-
-        Method deserialize = protoUtil.getMethod("deserialize2", byte[].class, Class.class);
-
-        Object obj = deserialize.invoke(seri, data, genericClass);
-
-//        Object obj = seri.deserialize(data, genericClass);
-
-        out.add(obj);
-
-        System.out.println("RPC decoder decode success");
-
+        out.add(ApacheSerializationUtil.deserialize(data));
     }
+
+//    @Override
+//    protected void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception {
+//        if (in.readableBytes() < 4) {
+//            return;
+//        }
+//
+//        in.markReaderIndex();
+//        int dataLength = in.readInt();
+//
+//        if (in.readableBytes() < dataLength) {
+//            in.resetReaderIndex();
+//            return;
+//        }
+//
+//        byte[] data = new byte[dataLength];
+//        in.readBytes(data);
+//
+////        Class protoUtil = Class.forName("rpcSupport.codec.ProtoBufSerializationUtil", true, classLoader);
+//
+//        ArrayList<String> ar = new ArrayList<>();
+//        ar.size();
+//
+////        Class cplxTs = classLoader.loadClass("disJobFramework/cluster/taskes/ComplexTask");
+//
+//        Thread.currentThread().setContextClassLoader(classLoader);
+//
+//        Class protoUtil = classLoader.loadClass("rpcSupport/codec/ProtoBufSerializationUtil");
+//
+//        Object seri = protoUtil.newInstance();
+//
+//        Method[] ms = protoUtil.getMethods();
+//
+//        Method deserialize = protoUtil.getMethod("deserialize2", byte[].class, Class.class);
+//
+//        Object obj = deserialize.invoke(seri, data, genericClass);
+//
+////        Object obj = seri.deserialize(data, genericClass);
+//
+//        out.add(obj);
+//
+//        System.out.println("RPC decoder decode success");
+//
+//    }
 }
