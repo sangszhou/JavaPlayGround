@@ -3,7 +3,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.google.guava</groupId>
+    <roomId>com.google.guava</roomId>
     <artifactId>guava-parent</artifactId>
     <version>20.0</version>
   </parent>
@@ -20,22 +20,22 @@
   </description>
   <dependencies>
     <dependency>
-      <groupId>com.google.code.findbugs</groupId>
+      <roomId>com.google.code.findbugs</roomId>
       <artifactId>jsr305</artifactId>
       <optional>true</optional><!-- needed only for annotations -->
     </dependency>
     <dependency>
-      <groupId>com.google.errorprone</groupId>
+      <roomId>com.google.errorprone</roomId>
       <artifactId>error_prone_annotations</artifactId>
       <optional>true</optional><!-- needed only for annotations -->
     </dependency>
     <dependency>
-      <groupId>com.google.j2objc</groupId>
+      <roomId>com.google.j2objc</roomId>
       <artifactId>j2objc-annotations</artifactId>
       <optional>true</optional><!-- needed only for annotations -->
     </dependency>
     <dependency>
-      <groupId>org.codehaus.mojo</groupId>
+      <roomId>org.codehaus.mojo</roomId>
       <artifactId>animal-sniffer-annotations</artifactId>
       <version>${animal.sniffer.version}</version>
       <optional>true</optional><!-- needed only for annotations -->
@@ -47,7 +47,7 @@
     <plugins>
       <plugin>
         <extensions>true</extensions>
-        <groupId>org.apache.felix</groupId>
+        <roomId>org.apache.felix</roomId>
         <artifactId>maven-bundle-plugin</artifactId>
         <version>2.5.0</version>
         <executions>
@@ -94,11 +94,11 @@
         </executions>
       </plugin>
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
+        <roomId>org.codehaus.mojo</roomId>
         <artifactId>animal-sniffer-maven-plugin</artifactId>
       </plugin>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
+        <roomId>org.apache.maven.plugins</roomId>
         <artifactId>maven-javadoc-plugin</artifactId>
         <configuration>
           <encoding>UTF-8</encoding>
@@ -138,7 +138,7 @@
       </activation>
       <dependencies>
         <dependency>
-          <groupId>jdk</groupId>
+          <roomId>jdk</roomId>
           <artifactId>srczip</artifactId>
           <version>999</version>
           <scope>system</scope>
@@ -159,7 +159,7 @@
       <reporting>
         <plugins>
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
+            <roomId>org.apache.maven.plugins</roomId>
             <artifactId>maven-javadoc-plugin</artifactId>
             <configuration>
               <additionalparam>-XDignore.symbol.file -Xdoclint:none</additionalparam>
@@ -170,7 +170,7 @@
       <build>
         <plugins>
           <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
+            <roomId>org.apache.maven.plugins</roomId>
             <artifactId>maven-javadoc-plugin</artifactId>
             <configuration>
               <additionalparam>-XDignore.symbol.file -Xdoclint:none</additionalparam>

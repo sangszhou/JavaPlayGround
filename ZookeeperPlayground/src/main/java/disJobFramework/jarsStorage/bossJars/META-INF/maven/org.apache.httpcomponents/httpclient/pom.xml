@@ -26,7 +26,7 @@
  --><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.apache.httpcomponents</groupId>
+    <roomId>org.apache.httpcomponents</roomId>
     <artifactId>httpcomponents-client</artifactId>
     <version>4.5.2</version>
   </parent>
@@ -40,27 +40,27 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.apache.httpcomponents</groupId>
+      <roomId>org.apache.httpcomponents</roomId>
       <artifactId>httpcore</artifactId>
       <scope>compile</scope>
     </dependency>
     <dependency>
-      <groupId>commons-logging</groupId>
+      <roomId>commons-logging</roomId>
       <artifactId>commons-logging</artifactId>
       <scope>compile</scope>
     </dependency>
     <dependency>
-      <groupId>commons-codec</groupId>
+      <roomId>commons-codec</roomId>
       <artifactId>commons-codec</artifactId>
       <scope>compile</scope>
     </dependency>
     <dependency>
-      <groupId>junit</groupId>
+      <roomId>junit</roomId>
       <artifactId>junit</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.mockito</groupId>
+      <roomId>org.mockito</roomId>
       <artifactId>mockito-core</artifactId>
       <scope>test</scope>
     </dependency>
@@ -78,7 +78,7 @@
     </resources>
     <plugins>
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
+        <roomId>org.codehaus.mojo</roomId>
         <artifactId>build-helper-maven-plugin</artifactId>
         <version>1.8</version>
         <executions>
@@ -97,7 +97,7 @@
         </executions>
       </plugin>
       <plugin>
-        <groupId>com.googlecode.maven-download-plugin</groupId>
+        <roomId>com.googlecode.maven-download-plugin</roomId>
         <artifactId>download-maven-plugin</artifactId>
         <version>1.2.0</version>
         <executions>
@@ -186,7 +186,7 @@
       <build>
         <plugins>
           <plugin>
-            <groupId>com.googlecode.maven-download-plugin</groupId>
+            <roomId>com.googlecode.maven-download-plugin</roomId>
             <artifactId>download-maven-plugin</artifactId>
             <configuration>
               <overwrite>true</overwrite>

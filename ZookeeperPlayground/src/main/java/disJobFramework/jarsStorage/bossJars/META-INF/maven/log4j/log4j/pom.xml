@@ -28,7 +28,7 @@ target platform and specify -Dntdll_target=msbuild on the mvn command line.
 -->        
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>log4j</groupId>
+  <roomId>log4j</roomId>
   <artifactId>log4j</artifactId>
   <packaging>bundle</packaging>
   <name>Apache Log4j</name>
@@ -87,7 +87,7 @@ target platform and specify -Dntdll_target=msbuild on the mvn command line.
   <build>
     <plugins>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
+        <roomId>org.apache.maven.plugins</roomId>
         <artifactId>maven-resources-plugin</artifactId>
         <configuration>
           <encoding>UTF-8</encoding>
@@ -282,28 +282,28 @@ target platform and specify -Dntdll_target=msbuild on the mvn command line.
         </executions>
         <dependencies>
           <dependency>
-            <groupId>ant</groupId>
+            <roomId>ant</roomId>
             <artifactId>ant-nodeps</artifactId>
             <version>1.6.5</version>
           </dependency>
           <dependency>
-            <groupId>ant-contrib</groupId>
+            <roomId>ant-contrib</roomId>
             <artifactId>ant-contrib</artifactId>
             <version>1.0b2</version>
           </dependency>
           <dependency>
-            <groupId>ant</groupId>
+            <roomId>ant</roomId>
             <artifactId>ant-junit</artifactId>
             <version>1.6.5</version>
           </dependency>
           <dependency>
-            <groupId>junit</groupId>
+            <roomId>junit</roomId>
             <artifactId>junit</artifactId>
             <version>3.8.1</version>
             <scope>test</scope>
           </dependency>
           <dependency>
-            <groupId>sun.jdk</groupId>
+            <roomId>sun.jdk</roomId>
             <artifactId>tools</artifactId>
             <version>1.4.2</version>
             <scope>system</scope>
@@ -383,7 +383,7 @@ target platform and specify -Dntdll_target=msbuild on the mvn command line.
         Could possibly run on a JavaEE platform.
        -->
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
+        <roomId>org.codehaus.mojo</roomId>
         <artifactId>clirr-maven-plugin</artifactId>
         <version>2.2.2</version>
         <configuration>
@@ -391,7 +391,7 @@ target platform and specify -Dntdll_target=msbuild on the mvn command line.
         </configuration>
       </plugin>
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
+        <roomId>org.codehaus.mojo</roomId>
         <artifactId>rat-maven-plugin</artifactId>
         <version>1.0-alpha-3</version>
         <configuration>
@@ -401,7 +401,7 @@ target platform and specify -Dntdll_target=msbuild on the mvn command line.
         </configuration>
       </plugin>
       <plugin>
-        <groupId>org.apache.felix</groupId>
+        <roomId>org.apache.felix</roomId>
         <artifactId>maven-bundle-plugin</artifactId>
         <version>2.0.1</version>
         <extensions>true</extensions>
@@ -460,33 +460,33 @@ target platform and specify -Dntdll_target=msbuild on the mvn command line.
   </repositories>
   <dependencies>
     <dependency>
-      <groupId>javax.mail</groupId>
+      <roomId>javax.mail</roomId>
       <artifactId>mail</artifactId>
       <version>1.4.1</version>
       <optional>true</optional>
     </dependency>
     <!--  the following dependency is not needed on JDK 1.5 and higher 
     <dependency>
-      <groupId>com.sun.jmx</groupId>
+      <roomId>com.sun.jmx</roomId>
       <artifactId>jmxri</artifactId>
       <version>1.2.1</version>
       <optional>true</optional>
     </dependency>
     -->
     <dependency>
-      <groupId>oro</groupId>
+      <roomId>oro</roomId>
       <artifactId>oro</artifactId>
       <version>2.0.8</version>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>junit</groupId>
+      <roomId>junit</roomId>
       <artifactId>junit</artifactId>
       <version>3.8.2</version>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.apache.geronimo.specs</groupId>
+      <roomId>org.apache.geronimo.specs</roomId>
       <artifactId>geronimo-jms_1.1_spec</artifactId>
       <version>1.0</version>
       <optional>true</optional>

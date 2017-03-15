@@ -22,12 +22,12 @@ limitations under the License.
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <parent>
-    <groupId>org.apache.commons</groupId>
+    <roomId>org.apache.commons</roomId>
     <artifactId>commons-parent</artifactId>
     <version>32</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
-  <groupId>commons-codec</groupId>
+  <roomId>commons-codec</roomId>
   <artifactId>commons-codec</artifactId>
   <!-- Remember to update the version in default.properties as well -->
   <version>1.9</version>
@@ -206,7 +206,7 @@ limitations under the License.
   <!-- Codec should depend on very little -->
   <dependencies>
     <dependency>
-      <groupId>junit</groupId>
+      <roomId>junit</roomId>
       <artifactId>junit</artifactId>
       <version>4.11</version>
       <scope>test</scope>
@@ -231,7 +231,7 @@ limitations under the License.
     <pluginManagement>
       <plugins>
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
+          <roomId>org.apache.maven.plugins</roomId>
           <artifactId>maven-scm-publish-plugin</artifactId>
           <configuration>
             <ignorePathsToDelete>
@@ -243,7 +243,7 @@ limitations under the License.
     </pluginManagement>
     <plugins>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
+        <roomId>org.apache.maven.plugins</roomId>
         <artifactId>maven-surefire-plugin</artifactId>
         <configuration>
           <excludes>
@@ -253,7 +253,7 @@ limitations under the License.
         </configuration>
       </plugin>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
+        <roomId>org.apache.maven.plugins</roomId>
         <artifactId>maven-jar-plugin</artifactId>
         <version>2.4</version>
         <executions>
@@ -265,7 +265,7 @@ limitations under the License.
         </executions>
       </plugin>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
+        <roomId>org.apache.maven.plugins</roomId>
         <artifactId>maven-assembly-plugin</artifactId>
         <version>2.4</version>
         <configuration>
@@ -281,7 +281,7 @@ limitations under the License.
   <reporting>
     <plugins>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
+        <roomId>org.apache.maven.plugins</roomId>
         <artifactId>maven-checkstyle-plugin</artifactId>
         <!-- Use 2.9.1 instead of 2.10; 2.10 seems to scan the 'target' 
         dir and wants license headers in .properties to be the header for 
@@ -302,7 +302,7 @@ limitations under the License.
         </reportSets>
       </plugin>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
+        <roomId>org.apache.maven.plugins</roomId>
         <artifactId>maven-pmd-plugin</artifactId>
         <version>3.0.1</version>
         <configuration>
@@ -314,12 +314,12 @@ limitations under the License.
         </configuration>
       </plugin>
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
+        <roomId>org.codehaus.mojo</roomId>
         <artifactId>findbugs-maven-plugin</artifactId>
         <version>2.5.2</version>
       </plugin>
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
+        <roomId>org.codehaus.mojo</roomId>
         <artifactId>taglist-maven-plugin</artifactId>
         <version>2.4</version>
         <configuration>
@@ -331,7 +331,7 @@ limitations under the License.
         </configuration>
       </plugin>
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
+        <roomId>org.codehaus.mojo</roomId>
         <artifactId>javancss-maven-plugin</artifactId>
         <version>2.0</version>
       </plugin>

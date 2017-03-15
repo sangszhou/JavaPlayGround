@@ -13,7 +13,6 @@ import java.util.List;
  * Created by xinszhou on 30/12/2016.
  */
 public class CRUDExample {
-
     public static void create(CuratorFramework client, String path, byte[] payload) throws Exception {
         // this will create the given ZNode with the given data
         client.create().forPath(path, payload);
@@ -81,7 +80,7 @@ public class CRUDExample {
 
     public static void guaranteedDelete(CuratorFramework client, String path) throws Exception {
         // delete the given node and guarantee that it completes
-		/*
+        /*
 		 * Guaranteed Delete Solves this edge case: deleting a node can fail due
 		 * to connection issues. Further, if the node was ephemeral, the node
 		 * will not get auto-deleted as the session is still valid. This can
@@ -109,6 +108,4 @@ public class CRUDExample {
          */
         return client.getChildren().usingWatcher(watcher).forPath(path);
     }
-
-
 }

@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>JavaPlayGround</artifactId>
-        <groupId>JavaPlayGround</groupId>
+        <roomId>JavaPlayGround</roomId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -13,32 +13,32 @@
 
     <dependencies>
         <dependency>
-            <groupId>io.netty</groupId>
+            <roomId>io.netty</roomId>
             <artifactId>netty-all</artifactId>
             <version>4.1.6.Final</version>
         </dependency>
 
         <dependency>
-            <groupId>org.apache.curator</groupId>
+            <roomId>org.apache.curator</roomId>
             <artifactId>curator-recipes</artifactId>
             <version>3.2.1</version>
         </dependency>
 
 
         <dependency>
-            <groupId>org.apache.curator</groupId>
+            <roomId>org.apache.curator</roomId>
             <artifactId>curator-framework</artifactId>
             <version>3.2.1</version>
         </dependency>
 
         <dependency>
-            <groupId>org.apache.curator</groupId>
+            <roomId>org.apache.curator</roomId>
             <artifactId>curator-test</artifactId>
             <version>3.2.1</version>
         </dependency>
 
         <dependency>
-            <groupId>org.apache.curator</groupId>
+            <roomId>org.apache.curator</roomId>
             <artifactId>curator-client</artifactId>
             <version>3.2.1</version>
         </dependency>

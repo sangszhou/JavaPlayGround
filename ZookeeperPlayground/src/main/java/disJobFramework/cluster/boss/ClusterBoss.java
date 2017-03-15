@@ -20,6 +20,7 @@ import java.util.concurrent.atomic.AtomicLong;
  */
 public class ClusterBoss implements Boss {
 
+
     static AtomicLong requestId = new AtomicLong(0);
 
     ConnectionManager connectionManager;
@@ -39,6 +40,8 @@ public class ClusterBoss implements Boss {
     @Override
     public void submitTask(Task task) {
         RpcRequest request = task2RpcRequest(task);
+
+
 
         RpcClientHandler handler;
 

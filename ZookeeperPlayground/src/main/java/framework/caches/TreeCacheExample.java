@@ -28,6 +28,8 @@ public class TreeCacheExample {
             @Override
             public void childEvent(CuratorFramework client, TreeCacheEvent event) throws Exception {
                 System.out.println("事件类型：" + event.getType() + " | 路径：" + event.getData().getPath());
+                event.getData().getData();
+                // 既有 data: byte[] 又有 type: Node_Add, Node_Removed, Node_Updated
             }
         };
 
@@ -40,5 +42,4 @@ public class TreeCacheExample {
         client.close();
         System.out.println("OK!");
     }
-
 }

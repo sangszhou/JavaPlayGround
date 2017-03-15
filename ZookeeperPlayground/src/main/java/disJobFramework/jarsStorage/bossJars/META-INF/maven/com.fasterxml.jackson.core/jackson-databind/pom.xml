@@ -3,12 +3,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>com.fasterxml.jackson</groupId>
+    <roomId>com.fasterxml.jackson</roomId>
     <artifactId>jackson-parent</artifactId>
     <version>2.7</version>
   </parent>
 
-  <groupId>com.fasterxml.jackson.core</groupId>
+  <roomId>com.fasterxml.jackson.core</roomId>
   <artifactId>jackson-databind</artifactId>
   <version>2.7.2</version>
   <name>jackson-databind</name>
@@ -45,11 +45,11 @@
   <dependencies>
     <!-- Builds on core streaming API; also needs core annotations -->
     <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
+      <roomId>com.fasterxml.jackson.core</roomId>
       <artifactId>jackson-annotations</artifactId>
     </dependency>
     <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
+      <roomId>com.fasterxml.jackson.core</roomId>
       <artifactId>jackson-core</artifactId>
       <version>2.7.2</version>
     </dependency>
@@ -59,20 +59,20 @@
       -->
     <!-- Mock -->
     <dependency>
-      <groupId>org.powermock</groupId>
+      <roomId>org.powermock</roomId>
       <artifactId>powermock-module-junit4</artifactId>
       <version>1.6.3</version>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.powermock</groupId>
+      <roomId>org.powermock</roomId>
       <artifactId>powermock-api-mockito</artifactId>
       <version>1.6.3</version>
       <scope>test</scope>
     </dependency>
     <!-- For testing TestNoClassDefFoundDeserializer -->
     <dependency>
-      <groupId>javax.measure</groupId>
+      <roomId>javax.measure</roomId>
       <artifactId>jsr-275</artifactId>
       <version>1.0.0</version>
       <scope>test</scope>
@@ -82,7 +82,7 @@
   <build>
      <plugins>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
+        <roomId>org.apache.maven.plugins</roomId>
         <version>${version.plugin.surefire}</version>
         <artifactId>maven-surefire-plugin</artifactId>
         <configuration>
@@ -96,7 +96,7 @@
       </plugin>
 
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
+        <roomId>org.apache.maven.plugins</roomId>
         <artifactId>maven-javadoc-plugin</artifactId>
         <version>${version.plugin.javadoc}</version>
         <configuration>
@@ -116,7 +116,7 @@
       <!-- May want to configure debug info -->
       <plugin>
         <!-- Inherited from oss-base. Generate PackageVersion.java.-->
-        <groupId>com.google.code.maven-replacer-plugin</groupId>
+        <roomId>com.google.code.maven-replacer-plugin</roomId>
         <artifactId>replacer</artifactId>
         <executions>
           <execution>
@@ -131,7 +131,7 @@
   <reporting>
     <plugins>
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
+        <roomId>org.codehaus.mojo</roomId>
         <artifactId>cobertura-maven-plugin</artifactId>
       </plugin>
     </plugins>

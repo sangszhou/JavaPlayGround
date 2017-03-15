@@ -2,13 +2,14 @@ package money;
 
 /**
  * Created by xinszhou on 02/02/2017.
+ * 闪电贷收益
  */
 public class ShanDianDai {
 
     public static void main(String args[]) {
 
         double monthlyPayment = 3404;
-        double yearlyInterest = 0.085;
+        double yearlyInterest = 0.095;
         double totalMoney = 300000;
 
         // 10 年后我还能剩多少钱

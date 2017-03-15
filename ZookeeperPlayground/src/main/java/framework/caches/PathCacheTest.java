@@ -61,5 +61,4 @@ public class PathCacheTest {
         client.close();
         System.out.println("OK!");
     }
-
 }

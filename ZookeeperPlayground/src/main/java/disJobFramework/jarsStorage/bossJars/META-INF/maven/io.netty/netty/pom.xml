@@ -18,12 +18,12 @@
 
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.sonatype.oss</groupId>
+    <roomId>org.sonatype.oss</roomId>
     <artifactId>oss-parent</artifactId>
     <version>7</version>
   </parent>
 
-  <groupId>io.netty</groupId>
+  <roomId>io.netty</roomId>
   <artifactId>netty</artifactId>
   <packaging>bundle</packaging>
   <version>3.7.0.Final</version>
@@ -73,7 +73,7 @@
   <dependencies>
     <!-- JBoss Marshalling - completely optional -->
     <dependency>
-      <groupId>org.jboss.marshalling</groupId>
+      <roomId>org.jboss.marshalling</roomId>
       <artifactId>jboss-marshalling</artifactId>
       <version>${jboss.marshalling.version}</version>
       <scope>compile</scope>
@@ -82,7 +82,7 @@
             
     <!-- Google Protocol Buffers - completely optional -->
     <dependency>
-      <groupId>com.google.protobuf</groupId>
+      <roomId>com.google.protobuf</roomId>
       <artifactId>protobuf-java</artifactId>
       <version>2.5.0</version>
       <scope>compile</scope>
@@ -92,7 +92,7 @@
     <!-- Servlet API - completely optional -->
     <!-- Used for HTTP tunneling transport -->
     <dependency>
-      <groupId>javax.servlet</groupId>
+      <roomId>javax.servlet</roomId>
       <artifactId>servlet-api</artifactId>
       <version>2.5</version>
       <scope>compile</scope>
@@ -101,7 +101,7 @@
     
     <!-- Example dependencies - completely optional -->
     <dependency>
-      <groupId>javax.activation</groupId>
+      <roomId>javax.activation</roomId>
       <artifactId>activation</artifactId>
       <version>1.1.1</version>
       <scope>compile</scope>
@@ -110,25 +110,25 @@
 
     <!-- IoC/DI containers - completely optional -->
     <dependency>
-      <groupId>org.apache.felix</groupId>
+      <roomId>org.apache.felix</roomId>
       <artifactId>org.osgi.core</artifactId>
       <version>1.4.0</version>
       <scope>compile</scope>
       <optional>true</optional>
     </dependency>
     <dependency>
-      <groupId>org.apache.felix</groupId>
+      <roomId>org.apache.felix</roomId>
       <artifactId>org.osgi.compendium</artifactId>
       <version>1.4.0</version>
       <scope>compile</scope>
       <optional>true</optional>
       <exclusions>
         <exclusion>
-          <groupId>org.apache.felix</groupId>
+          <roomId>org.apache.felix</roomId>
           <artifactId>javax.servlet</artifactId>
         </exclusion>
         <exclusion>
-          <groupId>org.apache.felix</groupId>
+          <roomId>org.apache.felix</roomId>
           <artifactId>org.osgi.foundation</artifactId>
         </exclusion>
       </exclusions>
@@ -136,47 +136,47 @@
 
     <!-- Logging frameworks - completely optional -->
     <dependency>
-      <groupId>org.slf4j</groupId>
+      <roomId>org.slf4j</roomId>
       <artifactId>slf4j-api</artifactId>
       <version>1.6.4</version>
       <scope>compile</scope>
       <optional>true</optional>
     </dependency>
     <dependency>
-      <groupId>commons-logging</groupId>
+      <roomId>commons-logging</roomId>
       <artifactId>commons-logging</artifactId>
       <version>1.1.1</version>
       <scope>compile</scope>
       <optional>true</optional>
     </dependency>
     <dependency>
-      <groupId>org.jboss.logging</groupId>
+      <roomId>org.jboss.logging</roomId>
       <artifactId>jboss-logging-spi</artifactId>
       <version>2.1.2.GA</version>
       <scope>compile</scope>
       <optional>true</optional>
     </dependency>
     <dependency>
-      <groupId>log4j</groupId>
+      <roomId>log4j</roomId>
       <artifactId>log4j</artifactId>
       <version>1.2.16</version>
       <scope>compile</scope>
       <exclusions>
         <exclusion>
           <artifactId>mail</artifactId>
-          <groupId>javax.mail</groupId>
+          <roomId>javax.mail</roomId>
         </exclusion>
         <exclusion>
           <artifactId>jms</artifactId>
-          <groupId>javax.jms</groupId>
+          <roomId>javax.jms</roomId>
         </exclusion>
         <exclusion>
           <artifactId>jmxtools</artifactId>
-          <groupId>com.sun.jdmk</groupId>
+          <roomId>com.sun.jdmk</roomId>
         </exclusion>
         <exclusion>
           <artifactId>jmxri</artifactId>
-          <groupId>com.sun.jmx</groupId>
+          <roomId>com.sun.jmx</roomId>
         </exclusion>
       </exclusions>
       <optional>true</optional>
@@ -184,38 +184,38 @@
 
     <!-- Testing frameworks and related dependencies -->
     <dependency>
-      <groupId>junit</groupId>
+      <roomId>junit</roomId>
       <artifactId>junit</artifactId>
       <version>4.10</version>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.easymock</groupId>
+      <roomId>org.easymock</roomId>
       <artifactId>easymock</artifactId>
       <version>3.1</version>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.easymock</groupId>
+      <roomId>org.easymock</roomId>
       <artifactId>easymockclassextension</artifactId>
       <version>3.1</version>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.slf4j</groupId>
+      <roomId>org.slf4j</roomId>
       <artifactId>slf4j-simple</artifactId>
       <version>1.6.4</version>
       <scope>test</scope>
     </dependency>
     <!-- Test dependencies for jboss marshalling encoder/decoder -->
     <dependency>
-      <groupId>org.jboss.marshalling</groupId>
+      <roomId>org.jboss.marshalling</roomId>
       <artifactId>jboss-marshalling-serial</artifactId>
       <version>${jboss.marshalling.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.jboss.marshalling</groupId>
+      <roomId>org.jboss.marshalling</roomId>
       <artifactId>jboss-marshalling-river</artifactId>
       <version>${jboss.marshalling.version}</version>
       <scope>test</scope>
@@ -242,7 +242,7 @@
         <!--This plugin's configuration is used to store Eclipse m2e settings only. 
             It has no influence on the Maven build itself. -->
         <plugin>
-          <groupId>org.eclipse.m2e</groupId>
+          <roomId>org.eclipse.m2e</roomId>
           <artifactId>lifecycle-mapping</artifactId>
           <version>1.0.0</version>
           <configuration>
@@ -250,7 +250,7 @@
               <pluginExecutions>
                 <pluginExecution>
                   <pluginExecutionFilter>
-                    <groupId>org.apache.maven.plugins</groupId>
+                    <roomId>org.apache.maven.plugins</roomId>
                     <artifactId>maven-antrun-plugin</artifactId>
                     <versionRange>[1.7,)</versionRange>
                     <goals>
@@ -263,7 +263,7 @@
                 </pluginExecution>
                 <pluginExecution>
                   <pluginExecutionFilter>
-                    <groupId>org.apache.maven.plugins</groupId>
+                    <roomId>org.apache.maven.plugins</roomId>
                     <artifactId>maven-checkstyle-plugin</artifactId>
                     <versionRange>[2.8,)</versionRange>
                     <goals>
@@ -323,12 +323,12 @@
       <plugin>
         <!-- ensure that only methods available in java 1.5 can
              be used even when compiling with java 1.6+ -->
-        <groupId>org.codehaus.mojo</groupId>
+        <roomId>org.codehaus.mojo</roomId>
         <artifactId>animal-sniffer-maven-plugin</artifactId>
         <version>1.7</version>
         <configuration>
           <signature>
-            <groupId>org.codehaus.mojo.signature</groupId>
+            <roomId>org.codehaus.mojo.signature</roomId>
             <artifactId>java15</artifactId>
             <version>1.0</version>
           </signature>
@@ -399,7 +399,7 @@
         </configuration>
       </plugin>
       <plugin>
-        <groupId>org.apache.felix</groupId>
+        <roomId>org.apache.felix</roomId>
         <artifactId>maven-bundle-plugin</artifactId>
         <version>2.3.4</version>
         <extensions>true</extensions>
@@ -527,22 +527,22 @@
         </executions>
         <dependencies>
           <dependency>
-            <groupId>org.apache.ant</groupId>
+            <roomId>org.apache.ant</roomId>
             <artifactId>ant</artifactId>
             <version>1.8.2</version>
           </dependency>
           <dependency>
-            <groupId>org.apache.ant</groupId>
+            <roomId>org.apache.ant</roomId>
             <artifactId>ant-launcher</artifactId>
             <version>1.8.2</version>
           </dependency>
           <dependency>
-            <groupId>ant-contrib</groupId>
+            <roomId>ant-contrib</roomId>
             <artifactId>ant-contrib</artifactId>
             <version>1.0b3</version>
             <exclusions>
               <exclusion>
-                <groupId>ant</groupId>
+                <roomId>ant</roomId>
                 <artifactId>ant</artifactId>
               </exclusion>
             </exclusions>
@@ -564,7 +564,7 @@
         <configuration>
           <doclet>org.jboss.apiviz.APIviz</doclet>
           <docletArtifact>
-            <groupId>org.jboss.apiviz</groupId>
+            <roomId>org.jboss.apiviz</roomId>
             <artifactId>apiviz</artifactId>
             <version>1.3.2.GA</version>
           </docletArtifact>
@@ -669,7 +669,7 @@
         </executions>
         <dependencies>
           <dependency>
-            <groupId>${project.groupId}</groupId>
+            <roomId>${project.roomId}</roomId>
             <artifactId>netty-build</artifactId>
             <version>16</version>
           </dependency>

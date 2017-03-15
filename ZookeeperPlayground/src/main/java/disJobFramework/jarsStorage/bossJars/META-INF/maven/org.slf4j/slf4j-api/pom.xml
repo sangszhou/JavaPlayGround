@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.slf4j</groupId>
+    <roomId>org.slf4j</roomId>
     <artifactId>slf4j-parent</artifactId>
     <version>1.7.22</version>
   </parent>
@@ -21,7 +21,7 @@
   <build>
     <plugins>
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
+        <roomId>org.codehaus.mojo</roomId>
         <artifactId>animal-sniffer-maven-plugin</artifactId>
         <configuration>
           <!-- Signatures cannot be determined and will error unless excluded.  This is isolated to
@@ -34,7 +34,7 @@
         </configuration>
       </plugin>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
+        <roomId>org.apache.maven.plugins</roomId>
         <artifactId>maven-surefire-plugin</artifactId>
         <configuration>
           <forkMode>once</forkMode>
@@ -48,7 +48,7 @@
       </plugin>
 
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
+        <roomId>org.apache.maven.plugins</roomId>
         <artifactId>maven-jar-plugin</artifactId>
         <executions>
           <execution>
@@ -63,7 +63,7 @@
       </plugin>
 
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
+        <roomId>org.apache.maven.plugins</roomId>
         <artifactId>maven-antrun-plugin</artifactId>
         <executions>
           <execution>

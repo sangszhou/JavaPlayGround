@@ -24,12 +24,12 @@ under the License.
     - available unit tests.
     -->
   <parent>
-    <groupId>org.apache.commons</groupId>
+    <roomId>org.apache.commons</roomId>
     <artifactId>commons-parent</artifactId>
     <version>34</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
-  <groupId>commons-logging</groupId>
+  <roomId>commons-logging</roomId>
   <artifactId>commons-logging</artifactId>
   <name>Apache Commons Logging</name>
   <version>1.2</version>
@@ -187,7 +187,7 @@ under the License.
         - ones.
         -->
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
+        <roomId>org.apache.maven.plugins</roomId>
         <artifactId>maven-jar-plugin</artifactId>
         <executions>
           <execution>
@@ -267,7 +267,7 @@ under the License.
       </plugin>
 
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
+        <roomId>org.apache.maven.plugins</roomId>
         <artifactId>maven-antrun-plugin</artifactId>
         <executions>
           <execution>
@@ -294,7 +294,7 @@ under the License.
           - Attach the adapters and api jars to the normal artifact. This way
           - they will be deployed when the normal artifact is deployed.
           -->
-        <groupId>org.codehaus.mojo</groupId>
+        <roomId>org.codehaus.mojo</roomId>
         <artifactId>build-helper-maven-plugin</artifactId>
         <version>1.0</version>
         <executions>
@@ -331,7 +331,7 @@ under the License.
           - In order to not mess with the Ant build we "disable" the normal test
           - phase. This is done by skipping the execution of the surefire plugin.
           -->
-        <groupId>org.apache.maven.plugins</groupId>
+        <roomId>org.apache.maven.plugins</roomId>
         <artifactId>maven-surefire-plugin</artifactId>
         <configuration>
           <skip>true</skip>
@@ -347,7 +347,7 @@ under the License.
           - Disable cobertura report generation as this does not work correctly
           - with integration-tests and the normal unit tests are disabled too.
           -->
-        <groupId>org.codehaus.mojo</groupId>
+        <roomId>org.codehaus.mojo</roomId>
         <artifactId>cobertura-maven-plugin</artifactId>
         <version>${commons.cobertura.version}</version>
         <configuration>
@@ -364,7 +364,7 @@ under the License.
           - For this we use the failsafe plugin which is bound to the
           - "integration-test" phase by default.
           -->
-        <groupId>org.apache.maven.plugins</groupId>
+        <roomId>org.apache.maven.plugins</roomId>
         <artifactId>maven-failsafe-plugin</artifactId>
         <version>${commons.surefire.version}</version>        
         <executions>
@@ -397,7 +397,7 @@ under the License.
       </plugin>
 
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
+        <roomId>org.apache.maven.plugins</roomId>
         <artifactId>maven-assembly-plugin</artifactId>
         <version>2.3</version>
         <configuration>
@@ -410,7 +410,7 @@ under the License.
       </plugin>
       <!-- Define properties for referencing dependencies -->
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
+        <roomId>org.apache.maven.plugins</roomId>
         <artifactId>maven-dependency-plugin</artifactId>
         <version>2.4</version>
         <executions>
@@ -423,7 +423,7 @@ under the License.
       </plugin>
 
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
+        <roomId>org.apache.maven.plugins</roomId>
         <artifactId>maven-scm-publish-plugin</artifactId>
         <configuration>
           <ignorePathsToDelete>
@@ -438,31 +438,31 @@ under the License.
 
   <dependencies>
     <dependency>
-      <groupId>junit</groupId>
+      <roomId>junit</roomId>
       <artifactId>junit</artifactId>
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>log4j</groupId>
+      <roomId>log4j</roomId>
       <artifactId>log4j</artifactId>
       <version>1.2.17</version>
       <optional>true</optional>
     </dependency>
     <dependency>
-      <groupId>logkit</groupId>
+      <roomId>logkit</roomId>
       <artifactId>logkit</artifactId>
       <version>1.0.1</version>
       <optional>true</optional>
     </dependency>
     <dependency>
-      <groupId>avalon-framework</groupId>
+      <roomId>avalon-framework</roomId>
       <artifactId>avalon-framework</artifactId>
       <version>4.1.5</version>
       <optional>true</optional>
     </dependency>
     <dependency>
-      <groupId>javax.servlet</groupId>
+      <roomId>javax.servlet</roomId>
       <artifactId>servlet-api</artifactId>
       <version>2.3</version>
       <scope>provided</scope>
@@ -473,7 +473,7 @@ under the License.
   <reporting>
     <plugins>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
+        <roomId>org.apache.maven.plugins</roomId>
         <artifactId>maven-checkstyle-plugin</artifactId>
         <version>2.7</version>
         <configuration>
@@ -483,17 +483,17 @@ under the License.
         </configuration>
       </plugin>
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
+        <roomId>org.codehaus.mojo</roomId>
         <artifactId>clirr-maven-plugin</artifactId>
         <version>2.2.2</version>
       </plugin>
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
+        <roomId>org.codehaus.mojo</roomId>
         <artifactId>jdepend-maven-plugin</artifactId>
         <version>2.0-beta-1</version>
       </plugin>
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
+        <roomId>org.codehaus.mojo</roomId>
         <artifactId>findbugs-maven-plugin</artifactId>
         <version>2.5.2</version>
         <configuration>
@@ -501,7 +501,7 @@ under the License.
         </configuration>
       </plugin>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
+        <roomId>org.apache.maven.plugins</roomId>
         <artifactId>maven-pmd-plugin</artifactId>
         <version>3.0.1</version>
         <configuration>

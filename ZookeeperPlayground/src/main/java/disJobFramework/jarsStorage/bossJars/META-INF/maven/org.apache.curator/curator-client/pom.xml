@@ -22,7 +22,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.apache.curator</groupId>
+        <roomId>org.apache.curator</roomId>
         <artifactId>apache-curator</artifactId>
         <version>3.2.1</version>
     </parent>
@@ -46,40 +46,40 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.apache.zookeeper</groupId>
+            <roomId>org.apache.zookeeper</roomId>
             <artifactId>zookeeper</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>com.google.guava</groupId>
+            <roomId>com.google.guava</roomId>
             <artifactId>guava</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>org.slf4j</groupId>
+            <roomId>org.slf4j</roomId>
             <artifactId>slf4j-api</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>org.mockito</groupId>
+            <roomId>org.mockito</roomId>
             <artifactId>mockito-core</artifactId>
             <scope>test</scope>
         </dependency>
 
         <dependency>
-            <groupId>org.apache.curator</groupId>
+            <roomId>org.apache.curator</roomId>
             <artifactId>curator-test</artifactId>
             <scope>test</scope>
         </dependency>
 
         <dependency>
-            <groupId>org.testng</groupId>
+            <roomId>org.testng</roomId>
             <artifactId>testng</artifactId>
             <scope>test</scope>
         </dependency>
 
         <dependency>
-            <groupId>org.slf4j</groupId>
+            <roomId>org.slf4j</roomId>
             <artifactId>slf4j-log4j12</artifactId>
             <scope>test</scope>
         </dependency>

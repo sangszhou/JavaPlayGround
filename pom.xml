@@ -26,6 +26,7 @@
         <module>Contests</module>
         <module>StormPlayground</module>
         <module>Common</module>
+        <module>ESTech</module>
     </modules>
 
     <dependencies>
@@ -130,6 +131,18 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>1.7.22</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>19.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.5</version>
         </dependency>
 
         <dependency>
