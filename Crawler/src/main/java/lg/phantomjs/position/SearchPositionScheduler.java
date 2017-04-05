@@ -63,7 +63,6 @@ public class SearchPositionScheduler {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
     }
 
 }

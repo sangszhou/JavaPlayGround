@@ -8,8 +8,9 @@ import java.util.List;
 /**
  * Created by xinszhou on 05/12/2016.
  */
-public class RpcDecoder extends ByteToMessageDecoder{
+public class RpcDecoder extends ByteToMessageDecoder {
 
+    // 能够 decode 的 class, 这是 serialization 的参数，某些序列化工具是不需要的
     private Class<?> genericClass;
 
     public RpcDecoder(Class<?> genericClass) {

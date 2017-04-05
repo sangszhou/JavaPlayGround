@@ -27,6 +27,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class ConnectionManager {
 
+    // key should be service id or service name
     private static Map<InetSocketAddress, RpcClientHandler> connectedServer = new ConcurrentHashMap<>();
 
     // @todo how to initialize?
@@ -45,6 +46,7 @@ public class ConnectionManager {
         if(allServersAddress == null || allServersAddress.size() == 0) return;
 
         Set<InetSocketAddress> newServerAddr = new HashSet<>();
+
         for(int i = 0; i < allServersAddress.size(); i ++) {
             String[] array = allServersAddress.get(i).split(":");
             if (array.length == 2) {

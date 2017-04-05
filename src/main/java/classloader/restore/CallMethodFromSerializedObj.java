@@ -1,5 +1,6 @@
 package classloader.restore;
 
+import com.google.common.net.HostAndPort;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.SerializationUtils;
 
@@ -21,25 +22,25 @@ public class CallMethodFromSerializedObj {
     static String filePath = SystemInfo.getProjectPath() + "/" + "hostAndPort.serialized";
 
     // create and serialize object
-//    public static void step1() throws Exception {
-//        DefaultSerializer defaultSerializer = new DefaultSerializer();
-//        DefaultDeserializer defaultDeserializer = new DefaultDeserializer();
-//
-//        HostAndPort hp = HostAndPort.fromString("localhost:80");
-//        defaultSerializer.serialize(hp, new FileOutputStream(filePath));
-//
-////        FileUtils.writeByteArrayToFile(new File(filePath), result);
-//
-////        byte[] result_cp = FileUtils.readFileToByteArray(new File(filePath));
-//
-//        Object deserized = defaultDeserializer.deserialize(new FileInputStream(filePath));
-//
-////        HostAndPort hp_cp = SerializationUtils.deserialize(result_cp);
-//
-//        HostAndPort hp_cp = (HostAndPort) deserized;
-//
-//        System.out.println(hp_cp.getHostText());
-//    }
+    public static void step1() throws Exception {
+        DefaultSerializer defaultSerializer = new DefaultSerializer();
+        DefaultDeserializer defaultDeserializer = new DefaultDeserializer();
+
+        HostAndPort hp = HostAndPort.fromString("localhost:80");
+        defaultSerializer.serialize(hp, new FileOutputStream(filePath));
+
+//        FileUtils.writeByteArrayToFile(new File(filePath), result);
+
+//        byte[] result_cp = FileUtils.readFileToByteArray(new File(filePath));
+
+        Object deserized = defaultDeserializer.deserialize(new FileInputStream(filePath));
+
+//        HostAndPort hp_cp = SerializationUtils.deserialize(result_cp);
+
+        HostAndPort hp_cp = (HostAndPort) deserized;
+
+        System.out.println(hp_cp.getHostText());
+    }
 
     // restore from binary file
     // before executing this method, remove guava dependency from project

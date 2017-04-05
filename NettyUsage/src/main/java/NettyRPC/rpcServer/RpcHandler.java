@@ -27,6 +27,7 @@ public class RpcHandler extends SimpleChannelInboundHandler<RpcRequest> {
 
         RpcResponse response = new RpcResponse();
         response.setRequestId(rpcRequest.getRequestId());
+
         try {
             Object result = handle(rpcRequest);
             response.setResult(result);
@@ -38,7 +39,6 @@ public class RpcHandler extends SimpleChannelInboundHandler<RpcRequest> {
 
         channelHandlerContext.writeAndFlush(response).addListener(channelFuture ->
                 System.out.println("response sent for request id: " + rpcRequest.getRequestId()));
-
     }
 
     public Object handle(RpcRequest request) throws Throwable {

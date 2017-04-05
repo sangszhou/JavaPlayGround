@@ -12,3 +12,5 @@ JVMPerformance/JVMPerformance.iml
 Elasticsearch/Elasticsearch.iml
 Docs/Docs.iml
 AOP/AOP.iml
+*/*.iml
+ZookeeperPlayground/ZookeeperPlayground.iml

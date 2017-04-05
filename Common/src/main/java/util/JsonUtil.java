@@ -63,4 +63,8 @@ public class JsonUtil {
         mapper.writeValue(outputStream, obj);
     }
 
+    public static JsonNode obj2Json(Object object) {
+        return mapper.convertValue(object, JsonNode.class);
+    }
+
 }

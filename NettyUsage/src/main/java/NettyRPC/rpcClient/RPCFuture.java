@@ -11,6 +11,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * Created by xinszhou on 05/12/2016.
  */
 public class RPCFuture implements Future<Object> {
+
     volatile RpcRequest request;
     volatile RpcResponse response = null;
 
@@ -41,7 +42,6 @@ public class RPCFuture implements Future<Object> {
         }
         this.response = response;
         latch.countDown();
-
     }
 
     @Override

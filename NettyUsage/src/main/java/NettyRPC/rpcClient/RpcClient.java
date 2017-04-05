@@ -17,15 +17,15 @@ public class RpcClient {
         int port = 9999;
 
         List<String> servers = new ArrayList<>();
-        servers.add(host+":"+port);
+        servers.add(host + ":" + port);
         ConnectionManager.getInstance().updateConnectedServers(servers);
     }
 
     public static <T> T create(Class<T> interfaceClass) {
         return (T) Proxy.newProxyInstance(
-                    interfaceClass.getClassLoader(),
-                    new Class<?>[]{interfaceClass},
-                    new ObjectProxy<T>(interfaceClass));
+                interfaceClass.getClassLoader(),
+                new Class<?>[]{interfaceClass},
+                new ObjectProxy<T>(interfaceClass));
     }
 
     public static <T> IAsyncObjectProxy createAsync(Class<T> interfaceClass) {
